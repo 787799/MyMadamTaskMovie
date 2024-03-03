@@ -99,7 +99,7 @@ export function Cards({
 }) {
   return (
     <Link href="/[id]" as={`/${id}`}>
-      <article class="w-full h-[350px] relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-1">
+      <article class="w-full h-[250px] lg:h-[350px] relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-1">
         <img
           src={`https://image.tmdb.org/t/p/original${posterPath}`}
           alt="University of Southern California"

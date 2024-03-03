@@ -16,7 +16,7 @@ export default function ServicesSection() {
           </div>
         </div>
 
-        <div class="grid gap-x-6 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
+        <div class="grid gap-x-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
           <div class="mb-12 ">
             <div class="flex">
               <div class="shrink-0">

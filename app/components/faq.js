@@ -97,7 +97,7 @@ export function HowDoesItWork() {
                 src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg"
               />
             </div>
-            <div class="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
+            <div class="relative grid grid-cols-3 text-center gap-y-12 md:grid-cols-3 gap-x-12">
               <div>
                 <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
                   <span class="text-xl font-semibold text-gray-700">1</span>

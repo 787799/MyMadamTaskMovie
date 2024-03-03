@@ -1,8 +1,10 @@
 "use client";
 import { useSelector } from "react-redux";
+import { DummyCard } from "./showMovie";
 
 export default function Stats() {
   const { data2, favFilms, status, error } = useSelector((state) => state.data);
+  const remainingDummyCards = Math.max(4 - favFilms.length, 0);
   return (
     <>
       <div class="bg-gray-900 lg:py-0 py-20">
@@ -221,26 +223,29 @@ export default function Stats() {
             </div>
           </div>
         </section>
-        {favFilms.length>0 && (
+        { 
           <section class="container p-6  mx-auto space-y-3">
             <h4 class="text-xl font-bold mt-4 text-white capitalize  md:text-3xl text-center">
-              ⚒️Added Watchlist Movies 🛠️
+              ⚒️Add movie to see Watchlist below 🛠️
             </h4>
             <p class="text-center text-2xl text-white">
-              Tools that will help you get things done in less time.
+              Tools that will help you to add movie into watchlist in less time.
             </p>
 
             <div class="flex items-center justify-center">
-              <div class="grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {/* <!-- cards --> */}
+            <div class="w-full grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {favFilms &&
-                  favFilms.map((e) => {
-                    return <GalleryCard movie={e} key={e.id} />;
-                  })}
+                  favFilms.map((movie) => (
+                    <GalleryCard movie={movie} key={movie.id} />
+                  ))}
+                {/* Render remaining DummyCards */}
+                {Array.from({ length: remainingDummyCards }).map((_, index) => (
+                  <DummyCard key={index} />
+                ))}
               </div>
             </div>
           </section>
-        )}
+        }
       </div>
     </>
   );

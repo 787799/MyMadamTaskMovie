@@ -12,12 +12,14 @@ export default function ShowMovie({ movie }) {
     dispatch(addFavratMovie(id));
   }
 
+  const remainingDummyCards = Math.max(4 - favFilms.length, 0);
+
   console.log("data 4 favroute", data4, favFilms);
 
   return (
     <>
-      <div className="bg-gray-900 min-h-screen flex  items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl w-full flex flex-col lg:flex-row justify-between ">
+      <div className="bg-gray-900  flex  items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl w-full px-6 flex flex-col lg:flex-row justify-between ">
           <div className="w-full lg:w-1/2">
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -42,7 +44,7 @@ export default function ShowMovie({ movie }) {
                 ))}
             </div>
             <p className="text-lg text-gray-100">{movie.overview}</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               <div>
                 <h3 className="text-xl font-semibold text-gray-100">
                   Release Date:
@@ -161,29 +163,48 @@ export default function ShowMovie({ movie }) {
         </div>
       </div>
       {
-        favFilms.length>0 && 
         <section class="container p-6  mx-auto space-y-3">
-        <h4 class="text-xl font-bold mt-4 text-white capitalize  md:text-3xl text-center">
-          ⚒️Added Watchlist Movies 🛠️
-        </h4>
-        <p class="text-center text-2xl text-white">
-          Tools that will help you get things done in less time.
-        </p>
+          <h4 class="text-xl font-bold mt-6 text-white capitalize  md:text-3xl text-center">
+            ⚒️Added Movie to see watchlist below 🛠️
+          </h4>
+          <p class="text-center mb-2 text-2xl text-white">
+            Click on 'Add to Watchlist' button to see that addtion in the below
+            list
+          </p>
 
-        <div class="flex items-center justify-center">
-          <div class="grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {/* <!-- cards --> */}
-            {favFilms &&
-              favFilms.map((e) => {
-                return <GalleryCard movie={e} key={e.id} />;
-              })}
+          <div class="flex items-center justify-center">
+            <div class="w-full ">
+         
+
+              <div class="w-full grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {favFilms &&
+                  favFilms.map((movie) => (
+                    <GalleryCard movie={movie} key={movie.id} />
+                  ))}
+                {/* Render remaining DummyCards */}
+                {Array.from({ length: remainingDummyCards }).map((_, index) => (
+                  <DummyCard key={index} />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
+        </section>
       }
-
- 
     </>
+  );
+}
+
+export function DummyCard() {
+  return (
+    <div class="flex flex-col h-[150px]  border shadow-sm rounded-xl p-4 md:p-5 dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+      <p class="mt-1 text-lg font-medium uppercase text-gray-100 dark:text-gray-500">
+        WatchList is empty now !
+      </p>
+      <p class="mt-2  text-gray-400 dark:text-gray-100">
+        Click on 'Add to watchlist' button to add those film into your own
+        watchlist .
+      </p>
+      
+    </div>
   );
 }

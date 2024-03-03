@@ -48,13 +48,13 @@ export default function Hero() {
   return (
     <>
     
-    <section class="bg-[url('https://tecdn.b-cdn.net/img/new/standard/city/078.jpg')] bg-cover bg-no-repeat h-screen overflow-hidden">
+    <section class="bg-[url('https://tecdn.b-cdn.net/img/new/standard/city/078.jpg')] bg-cover bg-no-repeat h-full lg:h-screen overflow-hidden">
       <div class="relative overflow-hidden  bg-[50%] h-screen ">
         <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed bg-[hsla(0,0%,0%,0.75)]">
           <div class="flex h-full items-center justify-center">
             <div class="px-6 text-center text-white md:px-12">
-              <h1 class="bg-gradient-to-r text-6xl font-extrabold from-blue-600 mb-4 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
-                <span class="text-9xl  ">IMdB Search</span> Online Movies <br />
+              <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 mb-4 inline-block text-transparent bg-clip-text">
+                <span class="text-6xl lg:text-9xl  ">IMdB Search</span> Online Movies <br />
               </h1>
 
               <div class="max-w-3xl text-center mx-auto my-6">
@@ -73,9 +73,8 @@ export default function Hero() {
                     class="mt-2 shadow-md focus:outline-none rounded-full py-3 px-6 block w-full"
                   />
                   <div class="text-left absolute top-10 rounded-t-none rounded-b-2xl shadow bg-white divide-y w-full max-h-40 "></div>
-                </div>
-
-                <ul className="absolute z-10 bg-transparent text-start  rounded text-black  mt-1 w-[40%] max-h-[300px] overflow-y-auto rounded shadow-lg">
+                  
+                <ul className="absolute z-10 bg-transparent text-start  rounded text-black  mt-1 w-full max-h-[300px] overflow-y-auto rounded shadow-lg">
                   {searchResults &&
                     searchResults?.map((movie) => (
                       <li
@@ -88,6 +87,8 @@ export default function Hero() {
                       </li>
                     ))}
                 </ul>
+                </div>
+
               </div>
               {/* <a
                 class="mb-2  inline-block rounded-full border-2 border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 md:mr-2 md:mb-0"

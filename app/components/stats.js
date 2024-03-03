@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import { DummyCard } from "./showMovie";
 
 export default function Stats() {
-  const { data2, favFilms, status, error } = useSelector((state) => state.data);
+  const { data4, favFilms, status, error } = useSelector((state) => state.data);
   const remainingDummyCards = Math.max(4 - favFilms.length, 0);
   return (
     <>
-      <div class="bg-gray-900 lg:py-0 py-20">
+      <div class="bg-gray-900 lg:py-0 py-0">
         <section class="bg-black  dark:bg-gray-900">
           <h2 class="text-4xl text-center pt-10 mb-10 text-white font-extrabold mx-auto md:text-6xl lg:text-5xl">
             Our Partners
@@ -223,7 +223,7 @@ export default function Stats() {
             </div>
           </div>
         </section>
-        { 
+        { favFilms.length>0 &&
           <section class="container p-6  mx-auto space-y-3">
             <h4 class="text-xl font-bold mt-4 text-white capitalize  md:text-3xl text-center">
               ⚒️Add movie to see Watchlist below 🛠️

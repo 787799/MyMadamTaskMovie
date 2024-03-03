@@ -162,7 +162,7 @@ export default function ShowMovie({ movie }) {
           </svg>
         </div>
       </div>
-      {
+      {favFilms &&
         <section class="container p-6  mx-auto space-y-3">
           <h4 class="text-xl font-bold mt-6 text-white capitalize  md:text-3xl text-center">
             ⚒️Added Movie to see watchlist below 🛠️
